@@ -12,7 +12,7 @@ let router = require('./routes/router');
 let admin = require("firebase-admin");
 
 // Initialize Firebase Admin
-let serviceAccount = require("./credentials/estacionart-manager-firebase-adminsdk-sbo3b-55767fcbcb.json");
+let serviceAccount = require("./credentials/estacionar-3fb9f-firebase-adminsdk-1sltp-a0ae4e691d.json");
 
 try{
     admin.initializeApp({

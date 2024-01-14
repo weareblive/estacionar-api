@@ -1,7 +1,7 @@
 
-INSERT INTO users (id, name) VALUES(1, 'Particular');
-INSERT INTO users (id, name) VALUES(2, 'Comercial');
-INSERT INTO users (id, name) VALUES(3, 'Corporativo');
+INSERT INTO user_account_types (id, name) VALUES(1, 'Particular');
+INSERT INTO user_account_types (id, name) VALUES(2, 'Comercial');
+INSERT INTO user_account_types (id, name) VALUES(3, 'Corporativo');
 
 
 INSERT INTO vehicle_types (id, name) VALUES(1, 'Auto');

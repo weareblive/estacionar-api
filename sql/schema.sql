@@ -55,7 +55,7 @@ CREATE TABLE vehicles
   id SERIAL PRIMARY KEY,
   plate_number character varying (10) NOT NULL,
   uid character varying(50) NOT NULL,
-  type REFERENCES vehicle_types NOT NULL,
+  type integer REFERENCES vehicle_types NOT NULL,
   brand_id integer REFERENCES brands NOT NULL,
   model_id integer REFERENCES vehicle_models NOT NULL,
   color character varying(20),
