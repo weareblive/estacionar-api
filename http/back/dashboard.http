@@ -1,0 +1,21 @@
+@server1 = http://localhost:8484
+@server2 = https://support-manager-api.vercel.app
+
+@gralToken = Bearer estacionartManager@2024
+@gralToken2 = Bearer bAcK
+@testToken = Bearer TestinG
+
+##
+###
+# PING
+GET {{server1}}/ping
+content-type: application/json
+
+
+
+##
+###
+# Get dashboard
+GET {{server1}}/back/v1/dashboard
+Authorization: {{gralToken2}}
+content-type: application/json

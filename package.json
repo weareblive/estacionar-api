@@ -1,0 +1,47 @@
+{
+  "name": "sma",
+  "version": "0.0.1",
+  "description": "SUPPORT MANAGER API",
+  "license": "Trazzart",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/trazzart/support-manager-api.git"
+  },
+  "scripts": {
+    "start": "node application.js",
+    "watch": "mocha test/api test/unit --watch"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1515.0",
+    "bcrypt-nodejs": "0.0.3",
+    "cors": "^2.8.5",
+    "dateformat": "^4.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.11.0",
+    "git-rev": "^0.2.1",
+    "gulp": "^4.0.2",
+    "gulp-jshint": "^2.1.0",
+    "gulp-nodemon": "^2.5.0",
+    "gulp-shell": "^0.8.0",
+    "gulp-spawn-mocha": "^6.0.0",
+    "html2canvas": "^1.2.1",
+    "jshint": "^2.12.0",
+    "jsonwebtoken": "^8.5.1",
+    "jspdf": "^2.3.1",
+    "jwt-simple": "^0.5.6",
+    "method-override": "^3.0.0",
+    "moment": "^2.27.0",
+    "nodemailer": "^6.6.3",
+    "parse-database-url": "^0.3.0",
+    "pg": "^8.3.2",
+    "randomatic": "^3.1.1",
+    "reverse-geocoding": "^3.0.2",
+    "superagent": "^6.1.0",
+    "uuid": "^9.0.1",
+    "yargs": "^15.4.1"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
