@@ -1,0 +1,62 @@
+@server1 = http://localhost:4444
+@server2 = https://estacionar-api.vercel.app
+
+@gralToken = Bearer estacionar@2024
+@gralToken2 = Bearer bAcK
+@testToken = Bearer TestinG
+@token = Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjBiYmQyOTllODU2MmU3MmYyZThkN2YwMTliYTdiZjAxMWFlZjU1Y2EiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiR29uemFsbyAgR3VhaW1hcyIsInByb2ZpbGUiOiJNYW5hZ2VyIiwic2hvcHMiOlt7ImlkIjoxMCwibmFtZSI6IlNyLiBCbGVuZCJ9LHsiaWQiOjE2LCJuYW1lIjoiSXN0ZXJpYSJ9LHsiaWQiOjIzLCJuYW1lIjoiU29saWRvIEluYy4ifV0sImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9jbHViLWdhbGVyaWEiLCJhdWQiOiJjbHViLWdhbGVyaWEiLCJhdXRoX3RpbWUiOjE3MDExNjU5ODQsInVzZXJfaWQiOiJDdTg2OTJOYTlzVU90TEtTdXZrVVc1NU5CaUkyIiwic3ViIjoiQ3U4NjkyTmE5c1VPdExLU3V2a1VXNTVOQmlJMiIsImlhdCI6MTcwMTE2NTk4NCwiZXhwIjoxNzAxMTY5NTg0LCJlbWFpbCI6ImdvbnphbG9AY2x1YmdhbGVyaWEuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZ29uemFsb0BjbHViZ2FsZXJpYS5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.f25qk5uJEyoe9VYKvaY8wuiYOPJy5dia_RGHmNcytcl5fbFJ8wCLhlKfMHmoSXoZPc1rfD-8tFr31kJGzCGvoF5d09nlV_ZUDWmTg66vnvFZiK4Msr8w9vn3xOyaWZI4nCEgpZIu3BHlsl5OYSZmKhTxSaUYRVA5TVq7fL505TM1xCxXObL6SSD_f7j4T6SMEGsDTth_XFVSeN39GSvgTkp19atYH2DW00Gv-0-JJOxq2ZIHF-q4B1_uLW5H9QOOLcgDTL74L-t4sRak4JnoF3vxJwE4xmB1AiyHds9Sjr4Qfmf778I7I_-xD3_U2d8AvlFnqpKQHp6NjcjKorXI7Q.eyJuYW1lIjoiSm9zZSAgQm96em9uZSIsInByb2ZpbGUiOiJBZG1pbiIsInNob3BzIjpbeyJpZCI6MCwibmFtZSI6IkFkbWluaXN0cmFjacOzbiJ9XSwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2NsdWItZ2FsZXJpYSIsImF1ZCI6ImNsdWItZ2FsZXJpYSIsImF1dGhfdGltZSI6MTcwMTEyODQ0MCwidXNlcl9pZCI6IkxwdUNXYm1pa1pkRklsWUNWNm1KT05vTzQ3cDIiLCJzdWIiOiJMcHVDV2JtaWtaZEZJbFlDVjZtSk9Ob080N3AyIiwiaWF0IjoxNzAxMTI4NDQwLCJleHAiOjE3MDExMzIwNDAsImVtYWlsIjoiam9zZWJvenpvbmVAY2x1YmdhbGVyaWEuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiam9zZWJvenpvbmVAY2x1YmdhbGVyaWEuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.RoNyn9IUxrT_HjAWWjB3w5VrKojBGXT8OoasPNeyIK_RsowC81QD2DhMcpj3K5eejgswNwg-S-5DXgS0wjFOfDP-b4WeSQr_Ipf53qaRv61VZ5ZgB4wMiWqZzeXQK_V0YALoYq91XjUcwgufImDwMFzDX5g2O0RXmbTNOa7XanYuUO9JA_8dLP6m8GV8bff5RkYEKONDIrSDGcebrjLWKZH8QKuRJSb5NJxIcgZLfZ_4WsFh4tTrnwhxLwXqcy3sh0OcQ-RznhcGRqYR3j1oWeml81w20FbbHlVcjTJa-nFdclazrgmxmKrcp4G282EbfUMCcv6V4UN5tnQXdOLPkQHp6NjcjKorXI7Q
+
+##
+###
+# PING
+GET {{server1}}/ping
+content-type: application/json
+
+##
+###
+# Get user's vehicles
+GET {{server1}}/app/v1/users/vehicles
+Authorization: {{gralToken}}
+content-type: application/json
+
+
+
+##
+###
+# Create vehicle
+POST {{server1}}/app/v1/users/vehicles
+Authorization: {{gralToken}}
+content-type: application/json
+
+{
+    "plate_number": "AB-123-CD",
+    "type": 1, 
+    "brand_id": 1,
+    "model_id": 2,
+    "color": "rojo", 
+    "year": 2020, 
+    "photo": ""
+
+}
+
+
+##
+###
+# Update user
+PUT {{server1}}/app/v1/users/vehicles
+Authorization: {{gralToken}}
+content-type: application/json
+
+{
+    "id": 1,
+    "plate_number": "AB-123-CD",
+    "type": 1,
+    "brand_id": 1,
+    "model_id": 2,
+    "color": "rojo",
+    "year": 2020,
+    "photo": "",
+    "enabled": false
+}
+
+   

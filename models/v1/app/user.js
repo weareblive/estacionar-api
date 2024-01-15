@@ -3,7 +3,7 @@
 //  Copyright © 2021 WeAreBlivet. All rights reserved.
 //
 let pg = require( '../../../lib/pgUtil');
-let debug = require('debug')('estacionar:models:back:user');
+let debug = require('debug')('estacionar:models:app:user');
 let dateFormat = require('dateformat');
 const admin = require('firebase-admin');
 let emails = require('../helpers/emails');

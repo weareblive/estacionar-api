@@ -3,7 +3,7 @@
 //  Copyright © 2021 WeAreBlivet. All rights reserved.
 //
 let pg = require( '../../../lib/pgUtil');
-let debug = require('debug')('estacionar:models:back:params');
+let debug = require('debug')('estacionar:models:app:params');
 let dateFormat = require('dateformat');
 
 class Params{
