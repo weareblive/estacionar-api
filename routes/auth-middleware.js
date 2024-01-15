@@ -6,7 +6,7 @@ const admin = require("firebase-admin");
 function authMiddleware(request, response, next) {
   const headerToken = request.headers.authorization;
 
-  const loginToken = `estacionartManager@2024`;
+  const loginToken = `estacionar@2024`;
 
   if (!headerToken) {
     return response.send({ message: "No token provided" }).status(401);
@@ -27,7 +27,7 @@ function authMiddleware(request, response, next) {
     console.log('ENTRO A MODO PRUEBA');
     if(token === loginToken || token === 'bAcK'){
       if(token === loginToken)
-        request.body.uid = 'VUs2Vo78kGQRwIB2uR6omkTPXsn1';
+        request.body.uid = '7RlzvIo21EXb6QrIsyL4NcXlSob2';
       else
         request.body.uid = '496uW2Xep6Ztr3uZzovqSTsRdrT2';
       next();

@@ -17,15 +17,10 @@ let router = {
     // GRAL RESPONSE
     app.use('/ping', (req, res) => res.status(200).send('PONG') );
     
-   
-    
-    app.use('/back', authMiddleware);
-    app.use('/back/v1', require( './v1/backRouter'));
+    app.use('/app', authMiddleware);
+    app.use('/app/v1', require( './v1/appRouter'));
       
-    // app.use('/api/v1/user', require( './v1/userRouter' ));
-    // app.use('/api/v1/admin', require( './v1/adminRouter' ));
-    // app.use('/api/v1/shop', require( './v1/shopRouter' ));
-
+    
   }
 };
 

@@ -2,10 +2,10 @@
   "name": "sma",
   "version": "0.0.1",
   "description": "SUPPORT MANAGER API",
-  "license": "Trazzart",
+  "license": "WeAreBlivet",
   "repository": {
     "type": "git",
-    "url": "git://github.com/trazzart/support-manager-api.git"
+    "url": "git://github.com/WeAreBlivet/support-manager-api.git"
   },
   "scripts": {
     "start": "node application.js",

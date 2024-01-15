@@ -1,6 +1,6 @@
 //
-//  Created by Trazzar on 01/01/2017
-//  Copyright © 2023 Trazzar. All rights reserved.
+//  Created by WeAreBlive on 01/01/2017
+//  Copyright © 2023 WeAreBlive. All rights reserved.
 //
 let debug = require('debug')('clubgaleria:models:emails');
 let fs = require('fs');

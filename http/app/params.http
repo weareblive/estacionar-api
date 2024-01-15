@@ -1,0 +1,19 @@
+@server1 = http://localhost:4444
+@server2 = https://estacionar-api.vercel.app
+
+@gralToken = Bearer estacionar@2024
+@gralToken2 = Bearer bAcK
+@testToken = Bearer TestinG
+
+
+###
+# PING
+GET {{server1}}/ping
+content-type: application/json
+
+##
+###
+# Get params
+GET {{server1}}/app/v1/params
+Authorization: {{gralToken}}
+content-type: application/json
