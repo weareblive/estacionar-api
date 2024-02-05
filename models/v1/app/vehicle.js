@@ -13,8 +13,8 @@ class Vehicle{
 
   static async getVehicles(uid){
     const res = await pg.executeQuery(`SELECT * FROM vehicles WHERE uid = $1`, [uid]);
-    if(res.length > 0) return res[0];
-    return {}
+    return res;
+    
   }
 
 
