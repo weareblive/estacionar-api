@@ -59,4 +59,16 @@ content-type: application/json
     "enabled": false
 }
 
+
+
+##
+###
+# SET vehicle as default use
+PUT {{server1}}/app/v1/users/vehicles/as_default
+Authorization: {{gralToken}}
+content-type: application/json
+
+{
+    "id": 1
+}
    

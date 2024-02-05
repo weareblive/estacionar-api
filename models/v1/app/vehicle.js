@@ -49,5 +49,13 @@ class Vehicle{
      
   }
 
+  static async  setAsDefault(uid, vehicleId)
+  {
+    let all = await pg.executeQuery('UPDATE vehicles SET is_default = false WHERE uid = $1',[uid]);
+    let res = await pg.executeQuery('UPDATE vehicles SET is_default = true WHERE id = $1 RETURNING *',[vehicleId]);
+    
+    return {success: (res.length > 0)};
+  }
+
 }
 module.exports = Vehicle;

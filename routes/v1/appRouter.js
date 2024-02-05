@@ -38,6 +38,13 @@ router.put('/users/vehicles', assert(['id', 'uid', 'plate_number', 'type', 'bran
   vehicle.updateVehicle(req.body).then( (results) => res.status(200).send(results)).catch(next);
 });
 
+router.put('/users/vehicles/as_default', assert(['id', 'uid']), (req, res, next) => {
+  vehicle.setAsDefault(req.body.uid, req.body.id).then( (results) => res.status(200).send(results)).catch(next);
+});
+
+
+
+
 
 
 
