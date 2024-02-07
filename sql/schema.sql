@@ -60,10 +60,16 @@ CREATE TABLE vehicles
   model_id integer REFERENCES vehicle_models NOT NULL,
   color character varying(20),
   year integer not null,
-  photo character varying(300),
   enabled boolean DEFAULT false,
   created_at timestamp without time zone DEFAULT now(),
   updated_at timestamp without time zone DEFAULT now()
+);
+
+CREATE TABLE vehicle_images
+(
+  id SERIAL PRIMARY KEY,
+  vehicle_id integer REFERENCES vehicles NOT NULL,
+  photo character varying(300)
 );
 
 

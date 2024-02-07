@@ -35,27 +35,27 @@ content-type: application/json
     "model_id": 2,
     "color": "rojo", 
     "year": 2020, 
-    "photo": ""
+    "images": ["photo1", "photo2"]
 
 }
 
 
 ##
 ###
-# Update user
+# Update vehicle
 PUT {{server1}}/app/v1/users/vehicles
 Authorization: {{gralToken}}
 content-type: application/json
 
 {
-    "id": 1,
+    "id": 33,
     "plate_number": "AB-123-CD",
     "type": 1,
     "brand_id": 1,
     "model_id": 2,
     "color": "rojo",
     "year": 2020,
-    "photo": "",
+    "images": ["photo1", "photo3"],
     "enabled": false
 }
 
