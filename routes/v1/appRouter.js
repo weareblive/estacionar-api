@@ -42,6 +42,10 @@ router.put('/users/vehicles/as_default', assert(['id', 'uid']), (req, res, next)
   vehicle.setAsDefault(req.body.uid, req.body.id).then( (results) => res.status(200).send(results)).catch(next);
 });
 
+router.delete('/users/vehicles', assert(['id']), (req, res, next) => {
+  vehicle.delete(req.body.id).then( (results) => res.status(200).send(results)).catch(next);
+});
+
 
 
 

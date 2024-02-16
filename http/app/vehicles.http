@@ -72,3 +72,17 @@ content-type: application/json
     "id": 1
 }
    
+
+
+
+##
+###
+# DELETE vehicle by id
+DELETE {{server1}}/app/v1/users/vehicles
+Authorization: {{gralToken}}
+content-type: application/json
+
+{
+    "id": 1
+}
+   

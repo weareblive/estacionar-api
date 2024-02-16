@@ -16,7 +16,7 @@ class Vehicle{
                                         FROM vehicles v 
                                         LEFT JOIN
                                           vehicle_images vi ON v.id = vi.vehicle_id
-                                          WHERE uid = $1
+                                          WHERE uid = $1 AND deleted = false
                                             GROUP BY v.id`, [uid]);
     return res;
     
@@ -57,7 +57,7 @@ class Vehicle{
       let vehicle = await pg.update('vehicles', params, {_ts: true});
       if(vehicle.length > 0)
       {
-        let prevImages = await pg.executeQuery('SELECT * FROM vehicle_images WHERE vehicle_id = $1', [vehicle[0].id]);
+        let prevImages = await pg.executeQuery('SELECT * FROM vehicle_images WHERE vehicle_id = $1 AND deleted = false', [vehicle[0].id]);
         
         const imagenesABorrar = prevImages.filter(obj1 =>
           !images.some(img => img === obj1.photo)
@@ -91,6 +91,13 @@ class Vehicle{
     let all = await pg.executeQuery('UPDATE vehicles SET is_default = false WHERE uid = $1',[uid]);
     let res = await pg.executeQuery('UPDATE vehicles SET is_default = true WHERE id = $1 RETURNING *',[vehicleId]);
     
+    return {success: (res.length > 0)};
+  }
+
+
+  static async  delete(vehicleId)
+  {
+    let res = await pg.executeQuery('UPDATE vehicles SET  deleted = true WHERE id = $1 RETURNING *',[vehicleId]);
     return {success: (res.length > 0)};
   }
 
