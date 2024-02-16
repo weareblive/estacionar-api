@@ -61,6 +61,7 @@ CREATE TABLE vehicles
   color character varying(20),
   year integer not null,
   enabled boolean DEFAULT false,
+  deleted boolean DEFAULT false,
   created_at timestamp without time zone DEFAULT now(),
   updated_at timestamp without time zone DEFAULT now()
 );
