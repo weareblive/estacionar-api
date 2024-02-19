@@ -4,6 +4,7 @@ let router = express.Router();
 let assert = require('../../middleware/assertParameters');
 let params = require('../../models/v1/app/params');
 let vehicle = require('../../models/v1/app/vehicle');
+let parking = require('../../models/v1/app/parking');
 let user = require('../../models/v1/app/user');
 let debug = require('debug')('estacionar:router:back');
 
@@ -48,6 +49,30 @@ router.delete('/users/vehicles', assert(['id']), (req, res, next) => {
 
 
 
+// PARKINGS
+router.get('/users/parkings',  assert(['uid']), (req, res, next) => {
+  parking.getParkings(req.body.uid).then( (results) => res.status(200).send(results)).catch(next);
+});
+
+router.post('/users/parkings', assert(['uid', 'name', 'type', 'address','city','state', 'zip', 'lat_long', 'images']), (req, res, next) => {
+  parking.createParking(req.body).then( (results) => res.status(200).send(results)).catch(next);
+});
+
+router.put('/users/parkings', assert(['id', 'uid', 'name', 'type', 'address','city','state', 'zip', 'lat_long', 'images', 'enabled']), (req, res, next) => {
+  parking.updateParking(req.body).then( (results) => res.status(200).send(results)).catch(next);
+});
+
+router.put('/users/parkings/as_default', assert(['id', 'uid']), (req, res, next) => {
+  parking.setAsDefault(req.body.uid, req.body.id).then( (results) => res.status(200).send(results)).catch(next);
+});
+
+router.delete('/users/parkings', assert(['id']), (req, res, next) => {
+  parking.delete(req.body.id).then( (results) => res.status(200).send(results)).catch(next);
+});
+
+router.post('/users/parkings/activate', assert(['uid', 'id', 'code']), (req, res, next) => {
+  parking.activateParking(req.body.uid, req.body.id, req.body.code).then( (results) => res.status(200).send(results)).catch(next);
+});
 
 
 

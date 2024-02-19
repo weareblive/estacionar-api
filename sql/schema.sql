@@ -85,9 +85,17 @@ CREATE TABLE parkings
   state character varying(100) NOT NULL,
   zip character varying(100) NOT NULL,
   lat_long character varying(100) NOT NULL,
-  photo character varying(300),
+  status character varying(30) NOT NULL,
   uid character varying(50) NOT NULL,
   enabled boolean DEFAULT false,
   created_at timestamp without time zone DEFAULT now(),
   updated_at timestamp without time zone DEFAULT now()
+);
+
+CREATE TABLE parking_images
+(
+  id SERIAL PRIMARY KEY,
+  parking_id integer REFERENCES parkings NOT NULL,
+  is_default  boolean default false
+  photo character varying(300)
 );

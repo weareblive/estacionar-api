@@ -18,6 +18,7 @@ class Vehicle{
                                           vehicle_images vi ON v.id = vi.vehicle_id
                                           WHERE uid = $1 AND deleted = false
                                             GROUP BY v.id`, [uid]);
+    
     return res;
     
   }
