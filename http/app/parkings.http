@@ -68,27 +68,17 @@ content-type: application/json
 
 ##
 ###
-# SET parking as default use
-PUT {{server1}}/app/v1/users/parkings/as_default
+# Activate parking
+POST {{server1}}/app/v1/users/parkings/activate
 Authorization: {{gralToken}}
 content-type: application/json
 
 {
-    "id": 1
+    "id": 4,
+    "code": 8008
+
 }
    
-
-router.put('/users/parkings/as_default', assert(['id', 'uid']), (req, res, next) => {
-  parking.setAsDefault(req.body.uid, req.body.id).then( (results) => res.status(200).send(results)).catch(next);
-});
-
-router.delete('/users/parkings', assert(['id']), (req, res, next) => {
-  parking.delete(req.body.id).then( (results) => res.status(200).send(results)).catch(next);
-});
-
-router.post('/users/parkings/activate', assert(['uid', 'parking_id', 'code']), (req, res, next) => {
-  parking.activateParking(req.body.uid, req.body.parking_id, req.body.code).then( (results) => res.status(200).send(results)).catch(next);
-});
 
 
 
