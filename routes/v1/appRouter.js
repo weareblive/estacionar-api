@@ -54,6 +54,11 @@ router.get('/users/parkings',  assert(['uid']), (req, res, next) => {
   parking.getParkings(req.body.uid).then( (results) => res.status(200).send(results)).catch(next);
 });
 
+router.get('/users/parkings/:id',  assert(['uid']), (req, res, next) => {
+  parking.getParkingById(req.params.id).then( (results) => res.status(200).send(results)).catch(next);
+});
+
+
 router.post('/users/parkings', assert(['uid', 'name', 'type', 'address','city','state', 'zip', 'lat_long', 'images']), (req, res, next) => {
   parking.createParking(req.body).then( (results) => res.status(200).send(results)).catch(next);
 });

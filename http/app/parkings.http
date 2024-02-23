@@ -20,6 +20,12 @@ Authorization: {{gralToken}}
 content-type: application/json
 
 
+##
+###
+# Get specific parkings
+GET {{server1}}/app/v1/users/parkings/2
+Authorization: {{gralToken}}
+content-type: application/json
 
 ##
 ###

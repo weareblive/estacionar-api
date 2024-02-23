@@ -21,6 +21,20 @@ class Parking{
   }
 
 
+  static async getParkingById(id){
+    const res = await pg.executeQuery(`SELECT p.*, ARRAY_AGG(pi.photo) AS images 
+                                        FROM parkings p
+                                        LEFT JOIN
+                                          parking_images pi ON p.id = pi.parking_id
+                                          WHERE p.id = $1 AND status <> 'deleted'
+                                            GROUP BY p.id`, [id]);
+    if(res.length>0)
+      return res[0];
+    return {};
+    
+  }
+
+
 
   static async createParking(params){
     
